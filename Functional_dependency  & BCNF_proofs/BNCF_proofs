@@ -1,0 +1,261 @@
+1. ‘Freelancer’ relation-
+Attributes: 
+(FreelancerID, Name, Email, Bio, HourlyRate, TotalEarnings, Rating, JoinDate) 
+
+Functional Dependencies: 
+FreelancerID → Name 
+FreelancerID → Email 
+FreelancerID → Bio 
+FreelancerID → HourlyRate 
+FreelancerID → TotalEarnings 
+FreelancerID → Rating 
+FreelancerID → JoinDate 
+Email → FreelancerID 
+
+Proof: 
+Let X = FreelancerID 
+Closure of X: 
+X⁺ = {FreelancerID, Name, Email, Bio, HourlyRate, TotalEarnings, Rating, JoinDate} 
+Let Y = Email 
+Closure of Y: 
+Y⁺ = {Email, FreelancerID, Name, Bio, HourlyRate, TotalEarnings, Rating, JoinDate} 
+
+Hence, FreelancerID and Email are candidate keys. 
+
+All FDs have LHS as candidate keys. 
+Therefore, ‘Freelancer’ is in BCNF. 
+
+2. ‘Skills’ relation-
+Attributes: 
+(SkillID, SkillName) 
+
+Functional Dependencies: 
+SkillID → SkillName 
+
+Proof: 
+Let X = SkillID 
+Closure: 
+X⁺ = {SkillID, SkillName} 
+
+Hence, SkillID is the candidate key. 
+
+All FDs have LHS as key. 
+‘Skills’ is in BCNF 
+
+3. ‘FreelancerSkill’ relatio-
+Attributes: 
+(FreelancerID, SkillID) 
+
+No non-trivial FD. 
+Candidate key = {FreelancerID, SkillID} 
+
+All attributes form key → 'Freelancer Skill' is in BCNF 
+
+4. ‘Client’ relation-
+Attributes: 
+(ClientID, Name, Email, CompanyName, JoinDate) 
+
+Functional Dependencies: 
+ClientID → Name 
+ClientID → Email 
+ClientID → CompanyName 
+ClientID → JoinDate 
+Email → ClientID 
+
+Proof: 
+Let X = ClientID 
+X⁺ = {ClientID, Name, Email, CompanyName, JoinDate} 
+Let Y = Email 
+Y⁺ = {Email, ClientID, Name, CompanyName, JoinDate} 
+Candidate keys = {ClientID, Email} 
+All FDs have LHS as candidate key. 
+‘Client’ is in BCNF 
+
+5. ‘Project’ relation-
+Attributes: 
+(ProjectID, Title, Status, UpperLimit, LowerLimit, Deadline, ClientID) 
+FuncSonal Dependencies: 
+ProjectID → Title 
+ProjectID → Status 
+ProjectID → UpperLimit 
+ProjectID → LowerLimit 
+ProjectID → Deadline 
+ProjectID → ClientID 
+
+Proof: 
+Let X = ProjectID 
+X⁺ = {ProjectID, Title, Status, UpperLimit, LowerLimit, Deadline, ClientID} 
+Candidate key = ProjectID 
+
+All FDs have LHS = key 
+‘Project’ is in BCNF 
+
+6. ‘Bid’ relation-
+Attributes: 
+(BidID, Amount, Proposal, Status) 
+
+Functional Dependencies: 
+BidID → Amount 
+BidID → Proposal 
+BidID → Status 
+
+Proof: 
+Let X = BidID 
+X⁺ = {BidID, Amount, Proposal, Status} 
+Candidate key = BidID 
+
+All FDs have LHS = key 
+‘Bid’ is in BCNF 
+
+7. ‘Bid_On’ relation-
+Attributes: 
+(FreelancerID, ProjectID, BidID) 
+
+Functional Dependencies: 
+No non-trivial functional dependency exists. 
+
+Proof: 
+Let X = (FreelancerID, ProjectID, BidID) 
+X⁺ = {FreelancerID, ProjectID, BidID} 
+candidate key = (FreelancerID, ProjectID, BidID). 
+
+No non-trivial FD 
+Therefore, ‘Bid_On’ is in BCNF. 
+
+8. ‘Contract’ relation-
+Attributes:
+(ContractID, AgreedAmount, StartDate, EndDate, BidID) 
+
+Functional Dependencies: 
+ContractID → AgreedAmount 
+ContractID → StartDate 
+ContractID → EndDate 
+ContractID → BidID 
+
+Proof: 
+Let X = ContractID 
+X⁺ = {ContractID, AgreedAmount, StartDate, EndDate, BidID} 
+
+Candidate key = ContractID 
+‘Contract’ is in BCNF 
+
+9. ‘Payment’ relation- 
+
+Attributes: 
+(PaymentID, Amount, Method, Date, ContractID) 
+
+FuncSonal Dependencies: 
+PaymentID → Amount 
+PaymentID → Method 
+PaymentID → Date 
+PaymentID → ContractID 
+
+Proof: 
+Let X = PaymentID 
+X⁺ = {PaymentID, Amount, Method, Date, ContractID} 
+
+Candidate key = PaymentID 
+‘Payment’ is in BCNF 
+
+10. ‘Review’ relation- 
+Attributes: 
+(ReviewID, Rating, Comment, Date, ContractID) 
+
+Functional Dependencies: 
+ReviewID → Rating 
+ReviewID → Comment 
+ReviewID → Date 
+ReviewID → ContractID 
+
+Proof: 
+Let X = ReviewID 
+X⁺ = {ReviewID, Rating, Comment, Date, ContractID} 
+
+Candidate key = ReviewID 
+‘Review’ is in BCNF 
+
+11. ‘Milestones’ relation-
+Attributes: 
+(ContractID, MilestoneNo, Description, Amount, Status, DueDate, EndDate) 
+
+Functional Dependencies: 
+(ContractID, MilestoneNo) → Description 
+(ContractID, MilestoneNo) → Amount 
+(ContractID, MilestoneNo) → Status 
+(ContractID, MilestoneNo) → DueDate 
+(ContractID, MilestoneNo) → EndDate 
+
+Proof: 
+Let X = (ContractID, MilestoneNo) 
+X⁺ = all attributes 
+
+Candidate key = (ContractID, MilestoneNo) 
+‘Milestones’ is in BCNF 
+
+12. ‘Dispute’ relation- 
+Attributes: 
+(DisputeID, ContractID, Reason, Status, Created_date) 
+
+Functional Dependencies: 
+DisputeID → ContractID 
+DisputeID → Reason 
+DisputeID → Status 
+DisputeID → Created_date 
+
+Proof: 
+Let X = DisputeID 
+X⁺ = all aPributes 
+Candidate key = DisputeID 
+‘Dispute’ is in BCNF 
+
+13. ‘Portfolio’ relation- 
+Attributes: 
+(PortfolioID, FreelancerID, Title, Techstack, Description, ProjectLink, Image) 
+Functional Dependencies: 
+PortfolioID → FreelancerID 
+PortfolioID → Title 
+PortfolioID → Techstack 
+PortfolioID → Description 
+PortfolioID → ProjectLink 
+PortfolioID → Image 
+
+Proof: 
+Let X = PortfolioID 
+X⁺ = all attributes 
+
+Candidate key = PortfolioID 
+ ‘Portfolio’ is in BCNF 
+
+14. ‘Freelancer Phone’ relation-
+Attributes: 
+(FreelancerID, PhoneNo) 
+
+No non-trivial FD 
+Candidate key = (FreelancerID, PhoneNo) 
+ Relation is in BCNF 
+
+15. ‘Bookmark’ relation- 
+Attributes: 
+(FreelancerID, ProjectID) 
+
+No non-trivial FD 
+Candidate key = (FreelancerID, ProjectID) 
+ Relation is in BCNF 
+
+16. ‘Skill_category’ relation 
+Attributes: 
+(SkillID, Category) 
+
+Functional Dependencies: 
+No non-trivial functional dependency exists. 
+
+Proof: 
+Let X = (SkillID, Category) 
+Closure: 
+X⁺ = {SkillID, Category} 
+
+Hence, the candidate key is (SkillID, Category). 
+
+Since there are no non-trivial functional dependencies, 
+all attributes together form the key. 
+Therefore, ‘Skill_Category’ is in BCNF.
