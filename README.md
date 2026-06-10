@@ -79,9 +79,8 @@ Contains realistic data for:
 ---
 
 ## Team Members
-
-Nihar Patel
-Ved Patel
 Praneel Sharma
+Nihar Patel
 Shlok Thakkar
+Ved Patel
 Shlok Ukani
