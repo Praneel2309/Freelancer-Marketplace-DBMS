@@ -20,7 +20,7 @@ WHERE p.client_ID = 'C001'
 GROUP BY p.project_ID, p.title, p.status, p.budget_min, p.budget_max 
 ORDER BY total_bids DESC; 
 
-2)All my projects, whether or not contract was created-
+2) All my projects, whether or not contract was created-
 Show all projects, even if no one has been hired for them yet. For each project, display 
 its basic details along with contract and freelancer information if available. Make sure 
 projects without any activity are still included in the list. -- starting from contract and right-joining to project ensures every project 
@@ -42,7 +42,7 @@ LEFT JOIN  freelancer f ON f.freelancer_ID = bo.freelancer_ID
 WHERE p.client_ID = 'C001' 
 ORDER BY p.deadline ASC NULLS LAST; 
 
-3)Compare all freelancers who bid on my project- rating,skills, past 
+3) Compare all freelancers who bid on my project- rating,skills, past 
 contracts-
 Compare all freelancers who have placed bids on a project. For each freelancer, show 
 their rating, skills, bid details, and how much experience they have based on past work. 
@@ -71,7 +71,7 @@ GROUP BY f.freelancer_ID, f.name, f.rating, f.hourly_rate,
          b.amount, b.status 
 ORDER BY f.rating DESC, bid_amount ASC; 
 
-4)My payment history- each payment linked to contract and milestone 
+4) My payment history- each payment linked to contract and milestone 
 progress-
 Track all payments made for projects along with their related work progress. For each 
 payment, show how many milestones exist and how many have been completed. 
