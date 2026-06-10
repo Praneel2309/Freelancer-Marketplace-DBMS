@@ -54,17 +54,14 @@ The database is designed using **ER Modeling**, **Functional Dependencies**, **B
 
 ## Entity Relationship Diagram
 
-> Add ER diagram image here
-
-```markdown
 ![ER Diagram](schema/ER_Diagram.png)
-```
-
 ---
 
 ## Database Schema
 
 ### Core Entities
+
+![relational_schema](schema/relational_schema.jpeg)
 
 | Entity         | Description                              |
 | -------------- | ---------------------------------------- |
@@ -94,7 +91,7 @@ This project follows a systematic database design process:
 Documentation available in:
 
 ```text
-normalization/
+Functional_dependency & BCNF_proofs/
 ├── functional_dependencies.md
 └── bcnf_proofs.pdf
 ```
@@ -159,7 +156,7 @@ freelancer-marketplace-dbms/
 │   ├── relational_schema.pdf
 │   └── ER_Diagram.png
 │
-├── normalization/
+├── Functional_dependency & BCNF_proofs/
 │   ├── functional_dependencies.md
 │   └── bcnf_proofs.pdf
 │
@@ -168,15 +165,10 @@ freelancer-marketplace-dbms/
 │   └── sample_output/
 │
 ├── queries/
-│   ├── freelancer_queries.sql
-│   ├── client_queries.sql
-│   └── admin_queries.sql
-│
-├── docs/
-│   ├── project_report.pdf
-│   └── assumptions.md
-│
-└── screenshots/
+    ├── freelancer_queries.sql
+    ├── client_queries.sql
+    └── admin_queries.sql
+
 ```
 
 ---
